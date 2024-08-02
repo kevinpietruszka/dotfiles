@@ -43,7 +43,7 @@ log "Updating packages..."
 sudo apt update -q || error "Failed to update"
 
 log "Installing tools..."
-tools=(stow zip zsh bat fzf fd-find git make ninja-build gettext cmake unzip build-essential gawk curl fontconfig tmux ripgrep python3 python3-pip python3-venv lua5.1 liblua5.1-dev)
+tools=(stow zip xclip zsh bat fzf fd-find git make ninja-build gettext cmake unzip build-essential gawk curl fontconfig tmux ripgrep python3 python3-pip python3-venv lua5.1 liblua5.1-dev)
 for tool in "${tools[@]}"; do
     install_package "$tool"
 done
