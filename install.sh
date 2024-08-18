@@ -3,7 +3,7 @@
 set -e
 
 PARENT_DIR=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
-LOG_FILE="$PARENT_DIR/install_log.txt"
+LOG_FILE="$PARENT_DIR/log.txt"
 cat /dev/null > "$LOG_FILE"
 
 log() {
