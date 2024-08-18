@@ -51,6 +51,9 @@ done
 log "Stowing the dotfiles"
 make || error "Failure to stow files"
 
+log "Installing catppuccin profile for gnome terminal"
+curl -L https://raw.githubusercontent.com/catppuccin/gnome-terminal/v0.3.0/install.py | python3 -
+
 if command_exists nvim; then
 	log "Neovim is already installed"
 else
