@@ -14,6 +14,11 @@ if [ -d "$HOME/.cargo" ]; then
   . "$HOME/.cargo/env"
 fi
 
+if [ -d "$HOME/.rbenv" ]; then
+  export PATH=$PATH:$HOME/.rbenv/bin:$PATH
+  eval "$(rbenv init -)"
+fi
+
 ZSH_THEME="robbyrussell"
 
 plugins=(git web-search zsh-syntax-highlighting)
