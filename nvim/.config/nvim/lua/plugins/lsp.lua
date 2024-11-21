@@ -27,7 +27,6 @@ return {
       ensure_installed = {
         "lua_ls",
         "pyright",
-        "ts_ls",
         "rust_analyzer",
         "gopls",
         "clangd",
