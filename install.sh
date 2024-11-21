@@ -18,6 +18,8 @@ error() {
 
 cleanup() {
     log "All done, consider removing the install log. Have a nice day!"
+    log "If on native ubuntu run the following script to get catpuccin theme for the terminal"
+    log "curl -L https://raw.githubusercontent.com/catppuccin/gnome-terminal/v0.3.0/install.py | python3 -"
 }
 
 command_exists() {
@@ -50,9 +52,6 @@ done
 
 log "Stowing the dotfiles"
 make || error "Failure to stow files"
-
-log "Installing catppuccin profile for gnome terminal"
-curl -L https://raw.githubusercontent.com/catppuccin/gnome-terminal/v0.3.0/install.py | python3 -
 
 if command_exists nvim; then
 	log "Neovim is already installed"
