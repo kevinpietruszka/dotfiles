@@ -23,18 +23,7 @@ return {
       }
     })
 
-    mason_lspconfig.setup({
-      ensure_installed = {
-        "lua_ls",
-        "pyright",
-        "rust_analyzer",
-        "gopls",
-        "clangd",
-        "cssls",
-        "html",
-        "jsonls",
-      },
-    })
+    mason_lspconfig.setup({})
 
     local keymap = vim.keymap
     vim.api.nvim_create_autocmd("LspAttach", {
@@ -97,21 +86,6 @@ return {
       function(server_name)
         lspconfig[server_name].setup({
           capabilities = capabilities,
-        })
-      end,
-      ["lua_ls"] = function()
-        lspconfig["lua_ls"].setup({
-          capabilities = capabilities,
-          settings = {
-            Lua = {
-              diagnostics = {
-                globals = { "vim" },
-              },
-              completion = {
-                callSnippet = "Replace",
-              },
-            },
-          },
         })
       end,
     })
