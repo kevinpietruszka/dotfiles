@@ -18,10 +18,18 @@ clean:
 neovim:
 	@if [ "$(ACTION)" = "stow" ]; then \
 		echo "Stowing neovim..."; \
+		if [ ! -d "$(NEOVIM_DIR)" ]; then \
+			echo "Making neovim config directory ..."; \
+			mkdir -p $(NEOVIM_DIR); \
+		fi; \
 		stow $(STOW_OPTIONS) --target=$(NEOVIM_DIR) neovim; \
 	else \
 		echo "Unstowing neovim..."; \
 		stow $(DELETE_OPTIONS) --target=$(NEOVIM_DIR) neovim; \
+		if [ -d "$(NEOVIM_DIR)" ]; then \
+			echo "Removing neovim config directory ..."; \
+			rm -rf $(NEOVIM_DIR); \
+		fi; \
 	fi
 
 git:
